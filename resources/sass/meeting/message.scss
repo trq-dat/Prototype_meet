@@ -1,0 +1,83 @@
+@import "../variables";
+
+.wrapper-msg {
+    .msg-time {
+        padding: 0 15px;
+        font-size: 8px;
+        color: #fbfaf6;
+    }
+}
+
+.wrapper-message-to {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    .wrapper-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .content {
+        width: calc(100% - 50px);
+        padding-top: 25px;
+        .msg-tooltip {
+            padding: 15px 15px 0 15px;
+            margin-bottom: 0;
+            position: relative;
+            .msg-arrow {
+                position: absolute;
+                top: 5px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 0 0 20px;
+                border-color: transparent transparent transparent #ffffff;
+            }
+            .msg {
+                display: inline-flex;
+                padding: 15px;
+                background: #fff;
+                color: #333;
+                border-radius: 15px;
+                border-top-left-radius: 0;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.wrapper-message-from {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .msg-tooltip {
+            padding: 15px 0 15px 15px;
+            margin-bottom: 0;
+            position: relative;
+            .msg-arrow {
+                position: absolute;
+                top: 5px;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 0 10px 20px;
+                border-color: transparent transparent #f39a59 transparent;
+            }
+            .msg {
+                display: inline-flex;
+                padding: 15px;
+                background: #f39a59;
+                color: #333;
+                border-radius: 15px;
+                border-top-right-radius: 0;
+                font-size: 14px;
+            }
+        }
+    }
+}

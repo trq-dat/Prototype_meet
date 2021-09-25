@@ -1,0 +1,90 @@
+@import "../variables";
+
+.container-meeting {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: $flightBlue;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    .header {
+        height: 152px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 52px;
+        padding-right: 52px;
+        border-bottom: 1px solid #ccc;
+        .info {
+            .avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            .info-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin-left: 23px;
+                p {
+                    font-size: 14px;
+                    margin-bottom: 8px;
+                }
+                span {
+                    opacity: 0.5;
+                    font-size: 10px;
+                }
+            }
+        }
+        .tool {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            ul,
+            li {
+                list-style: none;
+                display: inline-flex;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+            }
+            .tool-external,
+            .tool-zoom {
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                &:after {
+                    content: "";
+                    height: 50px;
+                    display: inline-flex;
+                    margin-left: 15px;
+                    border-right: 1px solid #fff;
+                }
+                li {
+                    padding: 0 10px;
+                }
+            }
+            .toggle {
+                padding: 0 20px;
+            }
+            .tool-external {
+            }
+        }
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 140px;
+        .user {
+            flex: 0 0 33.3%;
+            display: flex;
+            align-items: flex-end;
+            padding-left: 1em;
+            max-width: 33.3%;
+            justify-content: center;
+            margin-bottom: 35px;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@import "../variables";
+.wrapper-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+.share-screen-wrapper {
+    display: flex;
+    width: 100%;
+    height: 800px;
+    background-color: $white;
+    color: #333;
+    border: 1px solid #444;
+    .sidebar {
+        width: 145px;
+        height: 795px;
+        .ps {
+            height: 100%;
+            padding-right: 10px;
+        }
+        .item {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .index {
+                font-size: 12px;
+                color: #000;
+                padding-top: 6px;
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .layout {
+        width: calc(100% - 145px);
+        height: 100%;
+        border-left: 1px solid #444;
+        position: relative;
+        .gray-icon {
+            filter: brightness(0) invert(0.3);
+            padding: 8px 12px;
+        }
+        .tool-icon {
+            filter: brightness(0) invert(0);
+        }
+        .top-tool {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px;
+        }
+        .img-share {
+            width: 100%;
+            height: calc(100% - 90px);
+        }
+        .bottom-tool {
+            border-top: 1px solid #444;
+            height: 90px;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            .tool {
+                padding: 12px;
+                margin: 12px;
+                background-color: #f2f2f2;
+                border-radius: 10px;
+                border-color: #f2f2f2;
+                display: flex;
+                align-items: center;
+                min-width: 310px;
+                position: relative;
+                .icon-colors {
+                    position: absolute;
+                    left: 40%;
+                    top: -130px;
+                }
+                .group-icon {
+                    padding: 0 12px;
+                }
+            }
+            .notice {
+                padding: 0 20px;
+                font-size: 14px;
+            }
+        }
+    }
+}

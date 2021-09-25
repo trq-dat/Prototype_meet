@@ -1,0 +1,36 @@
+@import "../variables";
+
+.left-sidebar {
+    // padding: 10px;
+    border-right: 1px solid $colorBorder;
+    .top-content {
+        display: flex;
+        height: 152px;
+        flex-direction: column;
+        padding: 15px 15px 20px 15px;
+        border-bottom: 1px solid $colorBorder;
+        .user-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            .action {
+                display: flex;
+                align-items: flex-end;
+                li {
+                    list-style: none;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    .list-customer {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 152px);
+        .ps {
+            height: 100%;
+            padding-right: 10px;
+        }
+    }
+}

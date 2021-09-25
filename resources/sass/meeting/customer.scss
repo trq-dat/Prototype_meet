@@ -1,0 +1,29 @@
+@import "../variables";
+.customer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid $colorBorder;
+    .customer-info {
+        display: flex;
+        align-items: center;
+        .wrapper-icon {
+            margin-right: 15px;
+        }
+        .customer-name {
+            p {
+                font-size: 14px;
+            }
+            span {
+                opacity: 0.5;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .customer-action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}

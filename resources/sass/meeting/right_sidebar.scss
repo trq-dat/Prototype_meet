@@ -1,0 +1,36 @@
+@import "../variables";
+
+.right-sidebar {
+    border-left: 1px solid $colorBorder;
+    height: 100vh;
+    padding: 15px 0 0 35px;
+    .list-user {
+        display: flex;
+        flex-direction: column;
+        .ps {
+            // height: 100%;
+        }
+    }
+    .btn-add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 45px 15px 15px 15px;
+        .btn-add-user {
+            background: $flightBlue;
+            border: 1px solid $colorBorder;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: #fff;
+            .wrapper-icon {
+                margin-left: 10px;
+            }
+            &:hover {
+                background: $gray;
+                border-color: $gray;
+            }
+        }
+    }
+}
