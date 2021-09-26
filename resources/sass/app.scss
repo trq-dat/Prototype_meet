@@ -8,18 +8,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 // Style
-@import "meeting/commons.scss";
-@import "meeting/user.scss";
-@import "meeting/layout.scss";
-@import "meeting/layout_chat.scss";
-@import "meeting/customer.scss";
-@import "meeting/user_info.scss";
-@import "meeting/left_sidebar.scss";
-@import "meeting/right_sidebar.scss";
-@import "meeting/customer.scss";
-@import "meeting/chat_content.scss";
-@import "meeting/message.scss";
-@import "meeting/share_screen.scss";
+@import "page_meeting.scss";
 
 .navbar-laravel {
     background-color: #fff;
