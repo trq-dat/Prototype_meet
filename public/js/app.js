@@ -2027,6 +2027,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -2091,6 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_Icon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/Icon */ "./resources/js/components/common/Icon.vue");
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.vue");
+/* harmony import */ var _UserMeeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserMeeting */ "./resources/js/components/UserMeeting.vue");
 //
 //
 //
@@ -2140,21 +2143,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShareScreen",
   components: {
     Icon: _common_Icon__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Home: _Home__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Home: _Home__WEBPACK_IMPORTED_MODULE_1__["default"],
+    UserMeeting: _UserMeeting__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   props: {},
   data: function data() {
     return {
-      items: new Array(20).fill(0).map(function (_, i) {
-        return i;
-      })
+      users: [{
+        isFriend: true,
+        name: "name1",
+        avatar: "/images/user_1.png",
+        size: 'small'
+      }, {
+        isFriend: false,
+        name: "name2",
+        avatar: "/images/user_2.png",
+        size: 'small'
+      }, {
+        isFriend: false,
+        name: "name3",
+        avatar: "/images/user_3.png",
+        size: 'small'
+      }, {
+        isFriend: false,
+        name: "name4",
+        avatar: "/images/user_4.png",
+        size: 'small'
+      }, {
+        isFriend: false,
+        name: "name5",
+        avatar: "/images/user_5.png",
+        size: 'small'
+      }]
     };
   },
   mounted: function mounted() {}
@@ -2196,6 +2223,35 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {// console.log(this.$props);
+  },
+  computed: {
+    wrapperClass: function wrapperClass() {
+      var clsName = "user-wrapper";
+
+      if (this.user.size == "small") {
+        clsName += " size-small";
+      }
+
+      return clsName;
+    },
+    imgClass: function imgClass() {
+      var clsName = "img-def";
+
+      if (this.user.size == "small") {
+        clsName += " size-small";
+      }
+
+      return clsName;
+    },
+    popupClass: function popupClass() {
+      var clsName = "user-popup";
+
+      if (this.user.size == "small") {
+        clsName += " size-small";
+      }
+
+      return clsName;
+    }
   }
 });
 
@@ -39305,12 +39361,14 @@ var render = function() {
           "div",
           { staticClass: "container content" },
           _vm._l(_vm.users, function(user, index) {
-            return _c(
-              "div",
-              { key: index, staticClass: "user" },
-              [_c("user-meeting", { attrs: { user: user } })],
-              1
-            )
+            return _c("div", { key: index, staticClass: "user" }, [
+              _c(
+                "div",
+                { staticClass: "item" },
+                [_c("user-meeting", { attrs: { user: user } })],
+                1
+              )
+            ])
           }),
           0
         )
@@ -39348,38 +39406,6 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "wrapper-center" }, [
         _c("div", { staticClass: "share-screen-wrapper" }, [
-          _c(
-            "div",
-            { staticClass: "sidebar" },
-            [
-              _c(
-                "perfect-scrollbar",
-                _vm._l(_vm.items, function(item, index) {
-                  return _c(
-                    "div",
-                    { key: index, staticClass: "item" },
-                    [
-                      _c("icon", {
-                        attrs: { src: "/images/image_rectangle.png" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "index" }, [
-                        _vm._v(
-                          "\n              " +
-                            _vm._s(index + 1) +
-                            "\n            "
-                        )
-                      ])
-                    ],
-                    1
-                  )
-                }),
-                0
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
           _c("div", { staticClass: "layout" }, [
             _c(
               "div",
@@ -39474,6 +39500,24 @@ var render = function() {
                 )
               ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "sidebar" }, [
+            _c(
+              "div",
+              { staticClass: "list-user-vertical" },
+              _vm._l(_vm.users, function(user, index) {
+                return _c("div", { key: index, staticClass: "user" }, [
+                  _c(
+                    "div",
+                    { staticClass: "item" },
+                    [_c("user-meeting", { attrs: { user: user } })],
+                    1
+                  )
+                ])
+              }),
+              0
+            )
           ])
         ])
       ])
@@ -39503,12 +39547,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "user-wrapper" }, [
-    _c("img", { attrs: { src: _vm.user.avatar } }),
+  return _c("div", { class: _vm.wrapperClass }, [
+    _c("img", { class: _vm.imgClass, attrs: { src: _vm.user.avatar } }),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "user-popup" },
+      { class: _vm.popupClass },
       [
         _vm.user.isFriend
           ? _c("icon", { attrs: { src: "/images/icon_circle_image.png" } })

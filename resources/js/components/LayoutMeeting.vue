@@ -29,7 +29,9 @@
       </div>
       <div class="container content">
         <div class="user" v-for="(user, index) in users" :key="index">
-          <user-meeting :user="user" />
+          <div class="item">
+            <user-meeting :user="user" />
+          </div>
         </div>
       </div>
     </div>

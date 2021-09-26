@@ -10984,11 +10984,15 @@ a.text-dark:focus {
 
 .user-wrapper {
   display: flex;
-  width: 293px;
-  height: 293px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 20px solid #919191;
   position: relative;
+}
+
+.user-wrapper.size-small {
+  border: 5px solid #919191;
 }
 
 .user-wrapper img {
@@ -11007,6 +11011,13 @@ a.text-dark:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.user-wrapper .user-popup.size-small {
+  width: 45px;
+  height: 45px;
+  right: -5px;
+  top: -10px;
 }
 
 .container-meeting {
@@ -11107,6 +11118,11 @@ a.text-dark:focus {
   max-width: 33.3%;
   justify-content: center;
   margin-bottom: 35px;
+}
+
+.container-meeting .content .user .item {
+  width: 293px;
+  height: 293px;
 }
 
 .wrapper-chat {
@@ -11464,21 +11480,23 @@ a.text-dark:focus {
   height: 800px;
   background-color: #fff;
   color: #333;
-  border: 1px solid #444;
+  border-top: 1px solid #444;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
 }
 
 .share-screen-wrapper .sidebar {
-  width: 145px;
-  height: 795px;
-}
-
-.share-screen-wrapper .sidebar .ps {
-  height: 100%;
-  padding-right: 10px;
+  width: 115px;
+  height: 840px;
+  background-color: #181b39;
+  border-left: 1px solid #444;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .share-screen-wrapper .sidebar .item {
-  padding: 15px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11496,9 +11514,10 @@ a.text-dark:focus {
 }
 
 .share-screen-wrapper .layout {
-  width: calc(100% - 145px);
+  width: calc(100% - 115px);
   height: 100%;
-  border-left: 1px solid #444;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #444;
   position: relative;
 }
 

@@ -3,16 +3,6 @@
     <home />
     <div class="wrapper-center">
       <div class="share-screen-wrapper">
-        <div class="sidebar">
-          <perfect-scrollbar>
-            <div class="item" v-for="(item, index) in items" :key="index">
-              <icon src="/images/image_rectangle.png" />
-              <span class="index">
-                {{ index + 1 }}
-              </span>
-            </div>
-          </perfect-scrollbar>
-        </div>
         <div class="layout">
           <div class="top-tool">
             <icon class="gray-icon" src="/images/icon_zoom_out.png" />
@@ -43,6 +33,15 @@
             </div>
           </div>
         </div>
+        <div class="sidebar">
+          <div class="list-user-vertical">
+            <div class="user" v-for="(user, index) in users" :key="index">
+              <div class="item">
+                <user-meeting :user="user" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,17 +50,50 @@
 <script>
 import Icon from "./common/Icon";
 import Home from "./Home";
+import UserMeeting from "./UserMeeting";
 
 export default {
   name: "ShareScreen",
   components: {
     Icon,
     Home,
+    UserMeeting,
   },
   props: {},
   data() {
     return {
-      items: new Array(20).fill(0).map((_, i) => i),
+      users: [
+        {
+          isFriend: true,
+          name: "name1",
+          avatar: "/images/user_1.png",
+          size: 'small',
+        },
+        {
+          isFriend: false,
+          name: "name2",
+          avatar: "/images/user_2.png",
+          size: 'small',
+        },
+        {
+          isFriend: false,
+          name: "name3",
+          avatar: "/images/user_3.png",
+          size: 'small',
+        },
+        {
+          isFriend: false,
+          name: "name4",
+          avatar: "/images/user_4.png",
+          size: 'small',
+        },
+        {
+          isFriend: false,
+          name: "name5",
+          avatar: "/images/user_5.png",
+          size: 'small',
+        },
+      ],
     };
   },
   mounted() {},

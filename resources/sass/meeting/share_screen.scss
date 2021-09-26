@@ -13,16 +13,19 @@
     height: 800px;
     background-color: $white;
     color: #333;
-    border: 1px solid #444;
+    border-top: 1px solid #444;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
     .sidebar {
-        width: 145px;
-        height: 795px;
-        .ps {
-            height: 100%;
-            padding-right: 10px;
-        }
+        width: 115px;
+        height: 840px;
+        background-color: #181b39;
+        border-left: 1px solid #444;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
         .item {
-            padding: 15px;
+            padding: 5px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -38,9 +41,10 @@
         }
     }
     .layout {
-        width: calc(100% - 145px);
+        width: calc(100% - 115px);
         height: 100%;
-        border-left: 1px solid #444;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #444;
         position: relative;
         .gray-icon {
             filter: brightness(0) invert(0.3);
