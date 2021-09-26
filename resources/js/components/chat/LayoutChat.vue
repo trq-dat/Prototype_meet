@@ -1,17 +1,21 @@
 <template>
-  <div class="wrapper-chat col">
-    <div class="row">
-      <div class="col-3 px-0"><left-sidebar /></div>
-      <div class="col-6 px-0"><chat-content /></div>
-      <div class="col-3 px-0"><right-sidebar /></div>
+  <div>
+    <home />
+    <div class="wrapper-chat col">
+      <div class="row">
+        <div class="col-3 px-0"><left-sidebar /></div>
+        <div class="col-6 px-0"><chat-content /></div>
+        <div class="col-3 px-0"><right-sidebar /></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import ChatContent from './ChatContent';
+import ChatContent from "./ChatContent";
 import LeftSidebar from "./LeftSidebar";
 import RightSidebar from "./RightSidebar";
+import Home from "../Home";
 
 export default {
   name: "LayoutChat",
@@ -19,6 +23,7 @@ export default {
     LeftSidebar,
     RightSidebar,
     ChatContent,
+    Home,
   },
   data() {
     return {
